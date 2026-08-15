@@ -14,12 +14,47 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #080808;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 60px 7%;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 50px 7%;
         }
+
+        /* HEADER */
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 70px;
+        }
+
+        .logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .back {
+            color: #999999;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            color: #ffffff;
+        }
+
+        /* TITLE */
 
         .header {
             text-align: center;
@@ -27,28 +62,30 @@
         }
 
         .header h1 {
-            font-size: 60px;
+            font-size: clamp(45px, 7vw, 75px);
             margin-bottom: 15px;
         }
 
         .header p {
-            color: #888;
+            color: #888888;
             font-size: 18px;
         }
 
+        /* PROJECT CARDS */
+
         .projects {
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
         .card {
-            min-height: 310px;
-            padding: 30px;
+            min-height: 320px;
+            padding: 32px;
             border: 1px solid #292929;
-            border-radius: 20px;
+            border-radius: 22px;
             background: linear-gradient(145deg, #151515, #0d0d0d);
             display: flex;
             flex-direction: column;
@@ -58,18 +95,25 @@
 
         .card:hover {
             transform: translateY(-8px);
-            border-color: #555;
+            border-color: #555555;
+        }
+
+        .card-number {
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: auto;
         }
 
         .card h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
+            font-size: 31px;
+            margin-bottom: 12px;
         }
 
         .card p {
-            color: #888;
-            line-height: 1.5;
+            color: #888888;
+            line-height: 1.6;
             margin-bottom: 25px;
+            max-width: 500px;
         }
 
         .bottom {
@@ -84,31 +128,192 @@
         }
 
         .view {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            border: 1px solid #444;
-            padding: 10px 18px;
+            border: 1px solid #444444;
+            padding: 11px 20px;
             border-radius: 30px;
             transition: 0.3s;
+            cursor: pointer;
         }
 
         .view:hover {
-            background: white;
-            color: black;
+            background: #ffffff;
+            color: #000000;
         }
 
         .long-form {
             grid-column: span 2;
         }
 
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            padding: 130px 20px 80px;
+        }
+
+        .contact h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #888888;
+            margin-bottom: 30px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #dddddd;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #222222;
+            padding-top: 30px;
+            text-align: center;
+            color: #555555;
+            font-size: 14px;
+        }
+
+        /* POPUP BACKGROUND */
+
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+            z-index: 1000;
+            padding: 25px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+
+        /* POPUP BOX */
+
+        .popup-box {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 22px;
+            padding: 40px;
+        }
+
+        .close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            background: none;
+            border: none;
+            color: #888888;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ffffff;
+        }
+
+        .popup-box .small-title {
+            color: #777777;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .popup-box h2 {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .popup-box .description {
+            color: #999999;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .popup-price {
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .popup-price span {
+            color: #777777;
+            display: block;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .popup-price strong {
+            font-size: 28px;
+        }
+
+        .includes-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .includes {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .includes li {
+            color: #999999;
+            padding: 9px 0;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        .start-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .start-button:hover {
+            background: #dddddd;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 700px) {
 
             body {
-                padding: 40px 5%;
+                padding: 30px 5%;
             }
 
-            .header h1 {
-                font-size: 42px;
+            .top {
+                margin-bottom: 50px;
             }
 
             .projects {
@@ -120,7 +325,28 @@
             }
 
             .card {
-                min-height: 280px;
+                min-height: 290px;
+                padding: 25px;
+            }
+
+            .card h2 {
+                font-size: 27px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .popup-box {
+                padding: 30px 25px;
+            }
+
+            .popup-box h2 {
+                font-size: 34px;
+            }
+
+            .contact h2 {
+                font-size: 38px;
             }
         }
     </style>
@@ -128,19 +354,50 @@
 
 <body>
 
+    <!-- TOP -->
+
+    <div class="top">
+
+        <a href="index.html" class="logo">
+            ANTH STUDIOS
+        </a>
+
+        <a href="index.html" class="back">
+            Back to Home
+        </a>
+
+    </div>
+
+
+    <!-- HEADER -->
+
     <div class="header">
+
         <h1>Projects</h1>
 
         <p>
             Choose the editing style that fits your project.
         </p>
+
     </div>
+
+
+    <!-- PROJECTS -->
 
     <div class="projects">
 
+
+        <!-- IRL EDITING -->
+
         <div class="card">
 
-            <h2>IRL Editing</h2>
+            <div class="card-number">
+                01
+            </div>
+
+            <h2>
+                IRL Editing
+            </h2>
 
             <p>
                 Clean and entertaining editing for
@@ -150,10 +407,14 @@
             <div class="bottom">
 
                 <span class="price">
-                    €29,99
+                    €10,00
                 </span>
 
-                <a href="#" class="view">
+                <a
+                    href="#"
+                    class="view"
+                    onclick="openPopup('irl'); return false;"
+                >
                     VIEW →
                 </a>
 
@@ -162,9 +423,17 @@
         </div>
 
 
+        <!-- GAMING EDITING -->
+
         <div class="card">
 
-            <h2>Gaming Editing</h2>
+            <div class="card-number">
+                02
+            </div>
+
+            <h2>
+                Gaming Editing
+            </h2>
 
             <p>
                 Fast-paced gaming edits with effects,
@@ -177,7 +446,11 @@
                     €15,00
                 </span>
 
-                <a href="#" class="view">
+                <a
+                    href="#"
+                    class="view"
+                    onclick="openPopup('gaming'); return false;"
+                >
                     VIEW →
                 </a>
 
@@ -186,9 +459,17 @@
         </div>
 
 
+        <!-- REEL EDITING -->
+
         <div class="card">
 
-            <h2>Reel Editing</h2>
+            <div class="card-number">
+                03
+            </div>
+
+            <h2>
+                Reel Editing
+            </h2>
 
             <p>
                 Short-form editing for Instagram Reels,
@@ -201,7 +482,11 @@
                     €3,50
                 </span>
 
-                <a href="#" class="view">
+                <a
+                    href="#"
+                    class="view"
+                    onclick="openPopup('reel'); return false;"
+                >
                     VIEW →
                 </a>
 
@@ -210,9 +495,17 @@
         </div>
 
 
+        <!-- 4K EDITING -->
+
         <div class="card">
 
-            <h2>4K Editing</h2>
+            <div class="card-number">
+                04
+            </div>
+
+            <h2>
+                4K Editing
+            </h2>
 
             <p>
                 High-quality 4K video editing with
@@ -222,10 +515,14 @@
             <div class="bottom">
 
                 <span class="price">
-                    Contact
+                    €10,00
                 </span>
 
-                <a href="#" class="view">
+                <a
+                    href="#"
+                    class="view"
+                    onclick="openPopup('4k'); return false;"
+                >
                     VIEW →
                 </a>
 
@@ -234,9 +531,17 @@
         </div>
 
 
+        <!-- LONG FORM -->
+
         <div class="card long-form">
 
-            <h2>Long Form Video</h2>
+            <div class="card-number">
+                05
+            </div>
+
+            <h2>
+                Long Form Video
+            </h2>
 
             <p>
                 Professional long-form editing for
@@ -246,10 +551,14 @@
             <div class="bottom">
 
                 <span class="price">
-                    Contact
+                    €19,00
                 </span>
 
-                <a href="#" class="view">
+                <a
+                    href="#"
+                    class="view"
+                    onclick="openPopup('longform'); return false;"
+                >
                     VIEW →
                 </a>
 
@@ -257,7 +566,466 @@
 
         </div>
 
+
     </div>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact">
+
+        <h2>
+            Have a project?
+        </h2>
+
+        <p>
+            Let's create something together.
+        </p>
+
+        <a
+            href="mailto:your@email.com"
+            class="contact-button"
+        >
+            CONTACT ME
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Anth Studios. All rights reserved.
+
+    </footer>
+
+
+    <!-- IRL POPUP -->
+
+    <div class="popup" id="irl-popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup('irl')">
+                ×
+            </button>
+
+            <div class="small-title">
+                Project 01
+            </div>
+
+            <h2>
+                IRL Editing
+            </h2>
+
+            <p class="description">
+                Clean and entertaining video editing for
+                real-life content, creators, vlogs and
+                other IRL videos.
+            </p>
+
+            <div class="popup-price">
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong>
+                    €10,00
+                </strong>
+
+            </div>
+
+            <h3 class="includes-title">
+                What is included
+            </h3>
+
+            <ul class="includes">
+
+                <li>
+                    Clean cuts and pacing
+                </li>
+
+                <li>
+                    Transitions
+                </li>
+
+                <li>
+                    Music and sound effects
+                </li>
+
+                <li>
+                    Basic color correction
+                </li>
+
+                <li>
+                    Professional editing
+                </li>
+
+            </ul>
+
+            <a href="#" class="start-button">
+                START PROJECT
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- GAMING POPUP -->
+
+    <div class="popup" id="gaming-popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup('gaming')">
+                ×
+            </button>
+
+            <div class="small-title">
+                Project 02
+            </div>
+
+            <h2>
+                Gaming Editing
+            </h2>
+
+            <p class="description">
+                Fast-paced gaming editing designed to
+                keep viewers engaged and make your best
+                moments stand out.
+            </p>
+
+            <div class="popup-price">
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong>
+                    €15,00
+                </strong>
+
+            </div>
+
+            <h3 class="includes-title">
+                What is included
+            </h3>
+
+            <ul class="includes">
+
+                <li>
+                    Clean cuts
+                </li>
+
+                <li>
+                    Effects and transitions
+                </li>
+
+                <li>
+                    Music and sound effects
+                </li>
+
+                <li>
+                    Zooms and motion effects
+                </li>
+
+                <li>
+                    Professional pacing
+                </li>
+
+            </ul>
+
+            <a href="#" class="start-button">
+                START PROJECT
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- REEL POPUP -->
+
+    <div class="popup" id="reel-popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup('reel')">
+                ×
+            </button>
+
+            <div class="small-title">
+                Project 03
+            </div>
+
+            <h2>
+                Reel Editing
+            </h2>
+
+            <p class="description">
+                Short-form editing for Instagram Reels,
+                TikTok and other social media platforms.
+            </p>
+
+            <div class="popup-price">
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong>
+                    €3,50
+                </strong>
+
+            </div>
+
+            <h3 class="includes-title">
+                What is included
+            </h3>
+
+            <ul class="includes">
+
+                <li>
+                    Short-form editing
+                </li>
+
+                <li>
+                    Fast cuts
+                </li>
+
+                <li>
+                    Captions and text
+                </li>
+
+                <li>
+                    Music and sound effects
+                </li>
+
+                <li>
+                    Social media format
+                </li>
+
+            </ul>
+
+            <a href="#" class="start-button">
+                START PROJECT
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- 4K POPUP -->
+
+    <div class="popup" id="4k-popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup('4k')">
+                ×
+            </button>
+
+            <div class="small-title">
+                Project 04
+            </div>
+
+            <h2>
+                4K Editing
+            </h2>
+
+            <p class="description">
+                High-quality 4K video editing with clean
+                visuals, smooth pacing and professional
+                presentation.
+            </p>
+
+            <div class="popup-price">
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong>
+                    €10,00
+                </strong>
+
+            </div>
+
+            <h3 class="includes-title">
+                What is included
+            </h3>
+
+            <ul class="includes">
+
+                <li>
+                    4K video editing
+                </li>
+
+                <li>
+                    Clean cuts
+                </li>
+
+                <li>
+                    Smooth transitions
+                </li>
+
+                <li>
+                    Basic color correction
+                </li>
+
+                <li>
+                    Professional export
+                </li>
+
+            </ul>
+
+            <a href="#" class="start-button">
+                START PROJECT
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- LONG FORM POPUP -->
+
+    <div class="popup" id="longform-popup">
+
+        <div class="popup-box">
+
+            <button class="close" onclick="closePopup('longform')">
+                ×
+            </button>
+
+            <div class="small-title">
+                Project 05
+            </div>
+
+            <h2>
+                Long Form Video
+            </h2>
+
+            <p class="description">
+                Professional long-form editing for
+                YouTube videos, podcasts, documentaries
+                and other longer content.
+            </p>
+
+            <div class="popup-price">
+
+                <span>
+                    PRICE
+                </span>
+
+                <strong>
+                    €19,00
+                </strong>
+
+            </div>
+
+            <h3 class="includes-title">
+                What is included
+            </h3>
+
+            <ul class="includes">
+
+                <li>
+                    Full video editing
+                </li>
+
+                <li>
+                    Clean cuts and pacing
+                </li>
+
+                <li>
+                    Music and sound effects
+                </li>
+
+                <li>
+                    Transitions and effects
+                </li>
+
+                <li>
+                    Professional final export
+                </li>
+
+            </ul>
+
+            <a href="#" class="start-button">
+                START PROJECT
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function openPopup(type) {
+
+            const popup = document.getElementById(type + "-popup");
+
+            if (popup) {
+                popup.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+
+        }
+
+
+        function closePopup(type) {
+
+            const popup = document.getElementById(type + "-popup");
+
+            if (popup) {
+                popup.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+
+        }
+
+
+        document.querySelectorAll(".popup").forEach(function(popup) {
+
+            popup.addEventListener("click", function(event) {
+
+                if (event.target === popup) {
+
+                    popup.classList.remove("active");
+                    document.body.style.overflow = "";
+
+                }
+
+            });
+
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                document.querySelectorAll(".popup").forEach(function(popup) {
+
+                    popup.classList.remove("active");
+
+                });
+
+                document.body.style.overflow = "";
+
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
