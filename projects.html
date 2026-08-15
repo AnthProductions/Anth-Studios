@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Projects | Anth Studios</title>
 
     <style>
@@ -13,10 +15,10 @@
         }
 
         body {
-            background: #0a0a0a;
+            background: #080808;
             color: white;
             font-family: Arial, sans-serif;
-            padding: 60px 8%;
+            padding: 60px 7%;
         }
 
         .header {
@@ -25,32 +27,32 @@
         }
 
         .header h1 {
-            font-size: 55px;
+            font-size: 60px;
             margin-bottom: 15px;
         }
 
         .header p {
-            color: #999;
+            color: #888;
             font-size: 18px;
         }
 
         .projects {
+            max-width: 1200px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
-            max-width: 1200px;
-            margin: auto;
         }
 
         .card {
-            min-height: 300px;
+            min-height: 310px;
+            padding: 30px;
             border: 1px solid #292929;
             border-radius: 20px;
-            padding: 30px;
+            background: linear-gradient(145deg, #151515, #0d0d0d);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            background: linear-gradient(145deg, #151515, #0d0d0d);
             transition: 0.3s ease;
         }
 
@@ -59,19 +61,15 @@
             border-color: #555;
         }
 
-        .icon {
-            font-size: 45px;
-            margin-bottom: auto;
-        }
-
         .card h2 {
             font-size: 30px;
             margin-bottom: 10px;
         }
 
         .card p {
-            color: #999;
-            margin-bottom: 20px;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 25px;
         }
 
         .bottom {
@@ -104,12 +102,13 @@
         }
 
         @media (max-width: 700px) {
+
             body {
                 padding: 40px 5%;
             }
 
             .header h1 {
-                font-size: 40px;
+                font-size: 42px;
             }
 
             .projects {
@@ -119,6 +118,10 @@
             .long-form {
                 grid-column: span 1;
             }
+
+            .card {
+                min-height: 280px;
+            }
         }
     </style>
 </head>
@@ -127,72 +130,135 @@
 
     <div class="header">
         <h1>Projects</h1>
-        <p>Choose the editing style that fits your project.</p>
+
+        <p>
+            Choose the editing style that fits your project.
+        </p>
     </div>
 
     <div class="projects">
 
         <div class="card">
-            <div class="icon">🎮</div>
-
-            <h2>Gaming Editing</h2>
-            <p>Fast-paced gaming edits, effects, transitions and engaging moments.</p>
-
-            <div class="bottom">
-                <span class="price">From €XX</span>
-                <a href="#" class="view">VIEW →</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="icon">📹</div>
 
             <h2>IRL Editing</h2>
-            <p>Clean and entertaining edits for real-life content and creators.</p>
+
+            <p>
+                Clean and entertaining editing for
+                real-life content, creators and videos.
+            </p>
 
             <div class="bottom">
-                <span class="price">From €XX</span>
-                <a href="#" class="view">VIEW →</a>
+
+                <span class="price">
+                    €29,99
+                </span>
+
+                <a href="#" class="view">
+                    VIEW →
+                </a>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <div class="icon">🎬</div>
 
-            <h2>4K Editing</h2>
-            <p>High-quality 4K video editing with professional pacing and visuals.</p>
+        <div class="card">
+
+            <h2>Gaming Editing</h2>
+
+            <p>
+                Fast-paced gaming edits with effects,
+                transitions and engaging moments.
+            </p>
 
             <div class="bottom">
-                <span class="price">From €XX</span>
-                <a href="#" class="view">VIEW →</a>
+
+                <span class="price">
+                    €15,00
+                </span>
+
+                <a href="#" class="view">
+                    VIEW →
+                </a>
+
             </div>
+
         </div>
 
+
         <div class="card">
-            <div class="icon">📱</div>
 
             <h2>Reel Editing</h2>
-            <p>Short-form edits made for Reels, TikTok and other social platforms.</p>
+
+            <p>
+                Short-form editing for Instagram Reels,
+                TikTok and social media content.
+            </p>
 
             <div class="bottom">
-                <span class="price">From €XX</span>
-                <a href="#" class="view">VIEW →</a>
+
+                <span class="price">
+                    €3,50
+                </span>
+
+                <a href="#" class="view">
+                    VIEW →
+                </a>
+
             </div>
+
         </div>
 
-        <div class="card long-form">
-            <div class="icon">📺</div>
 
-            <h2>Long Form Video</h2>
-            <p>Professional long-form editing for YouTube, podcasts, documentaries and more.</p>
+        <div class="card">
+
+            <h2>4K Editing</h2>
+
+            <p>
+                High-quality 4K video editing with
+                professional visuals and smooth pacing.
+            </p>
 
             <div class="bottom">
-                <span class="price">From €XX</span>
-                <a href="#" class="view">VIEW →</a>
+
+                <span class="price">
+                    Contact
+                </span>
+
+                <a href="#" class="view">
+                    VIEW →
+                </a>
+
             </div>
+
+        </div>
+
+
+        <div class="card long-form">
+
+            <h2>Long Form Video</h2>
+
+            <p>
+                Professional long-form editing for
+                YouTube, podcasts, documentaries and more.
+            </p>
+
+            <div class="bottom">
+
+                <span class="price">
+                    Contact
+                </span>
+
+                <a href="#" class="view">
+                    VIEW →
+                </a>
+
+            </div>
+
         </div>
 
     </div>
 
 </body>
 </html>
+```
