@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Anth Studios | Video Editing</title>
+    <title>Anth Studios</title>
 
     <style>
         * {
@@ -18,304 +17,200 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: #ffffff;
-            min-height: 100vh;
+            background: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
         }
 
-        /* NAVBAR */
         nav {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            border-bottom: 1px solid #1c1c1c;
-            background: rgba(5, 5, 5, 0.9);
-            position: sticky;
+            position: absolute;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+            left: 0;
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 21px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            font-size: 22px;
+            font-weight: bold;
         }
 
-        .logo span {
-            color: #a855f7;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #999;
+        nav a {
+            color: white;
             text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
+            margin-left: 25px;
+            font-size: 15px;
         }
 
-        .nav-links a:hover,
-        .nav-links .active {
-            color: #a855f7;
+        nav a:hover {
+            color: #888;
         }
 
-        .contact-btn {
-            border: 1px solid #333;
-            padding: 10px 18px;
-            border-radius: 6px;
-            color: white !important;
-        }
-
-        .contact-btn:hover {
-            border-color: #a855f7;
-            background: rgba(168, 85, 247, 0.08);
-        }
-
-        /* HERO */
         .hero {
-            min-height: calc(100vh - 70px);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            background: #7e22ce;
-            opacity: 0.08;
-            filter: blur(180px);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            max-width: 850px;
-            z-index: 2;
-        }
-
-        .small-title {
-            color: #a855f7;
-            font-size: 13px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
+            padding: 100px 20px;
         }
 
         .hero h1 {
-            font-size: clamp(55px, 9vw, 105px);
-            line-height: 0.95;
-            letter-spacing: -5px;
-            font-weight: 800;
-            margin-bottom: 30px;
+            font-size: clamp(55px, 9vw, 110px);
+            line-height: 0.9;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: #a855f7;
+            color: #777;
         }
 
         .hero p {
-            max-width: 650px;
-            margin: auto;
             color: #999;
-            font-size: 17px;
-            line-height: 1.7;
+            font-size: 18px;
+            margin-bottom: 35px;
         }
 
-        .hero-buttons {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn {
-            padding: 14px 25px;
-            border-radius: 6px;
+        .button {
+            display: inline-block;
+            background: white;
+            color: black;
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: bold;
         }
 
-        .primary {
-            background: #a855f7;
-            color: white;
+        .projects {
+            padding: 100px 7%;
         }
 
-        .primary:hover {
-            background: #9333ea;
-            transform: translateY(-2px);
-        }
-
-        .secondary {
-            border: 1px solid #333;
-            color: white;
-        }
-
-        .secondary:hover {
-            border-color: #a855f7;
-            transform: translateY(-2px);
-        }
-
-        /* WORK */
-        .section {
-            padding: 100px 8%;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        .section-header {
+        .title {
             text-align: center;
             margin-bottom: 55px;
         }
 
-        .section-header small {
-            color: #a855f7;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-size: 12px;
+        .title h2 {
+            font-size: 55px;
+            margin-bottom: 12px;
         }
 
-        .section-header h2 {
-            font-size: 48px;
-            margin-top: 12px;
-        }
-
-        .section-header p {
-            color: #777;
-            margin-top: 15px;
+        .title p {
+            color: #888;
         }
 
         .cards {
+            max-width: 1200px;
+            margin: auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
         .card {
-            border: 1px solid #202020;
-            background: #090909;
+            min-height: 300px;
             padding: 30px;
-            min-height: 260px;
+            border: 1px solid #292929;
+            border-radius: 20px;
+            background: #101010;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             transition: 0.3s;
         }
 
         .card:hover {
-            border-color: #a855f7;
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+            border-color: #555;
         }
 
         .icon {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #151515;
-            border-radius: 8px;
-            font-size: 20px;
-            margin-bottom: 25px;
+            font-size: 45px;
+            margin-bottom: auto;
         }
 
         .card h3 {
-            font-size: 21px;
-            margin-bottom: 14px;
+            font-size: 29px;
+            margin-bottom: 10px;
         }
 
         .card p {
             color: #888;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        .card a {
-            display: inline-block;
-            margin-top: 25px;
-            color: #a855f7;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        /* ABOUT */
-        .about {
-            border-top: 1px solid #171717;
-            border-bottom: 1px solid #171717;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 750px;
-            margin: auto;
-        }
-
-        .about h2 {
-            font-size: 42px;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
 
-        .about p {
-            color: #888;
-            line-height: 1.8;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 35px 8%;
+        .card-bottom {
             display: flex;
             justify-content: space-between;
-            color: #555;
-            font-size: 13px;
+            align-items: center;
         }
 
-        footer span {
-            color: #a855f7;
+        .price {
+            font-weight: bold;
         }
 
-        /* MOBILE */
-        @media (max-width: 800px) {
-            nav {
-                padding: 0 5%;
-            }
+        .view {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 10px 18px;
+            border-radius: 30px;
+        }
 
-            .nav-links {
-                display: none;
-            }
+        .view:hover {
+            background: white;
+            color: black;
+        }
 
+        .long {
+            grid-column: span 2;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .contact h2 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+
+        @media (max-width: 700px) {
             .cards {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                letter-spacing: -3px;
+            .long {
+                grid-column: span 1;
             }
 
-            .hero-buttons {
-                flex-direction: column;
+            .title h2 {
+                font-size: 40px;
             }
 
-            .section {
-                padding: 70px 5%;
+            nav {
+                padding: 20px 5%;
             }
 
-            footer {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+            nav a {
+                margin-left: 10px;
             }
         }
     </style>
@@ -323,133 +218,111 @@
 
 <body>
 
-    <!-- NAVBAR -->
     <nav>
-        <div class="logo">
-            Anth<span>Studios</span>
-        </div>
+        <div class="logo">ANTH STUDIOS</div>
 
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="categories.html">Categories</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" class="contact-btn">Contact</a></li>
-        </ul>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="small-title">
-                Anth Studios
-            </div>
-
+    <section class="hero" id="home">
+        <div>
             <h1>
                 VIDEO<br>
                 <span>EDITING.</span>
             </h1>
 
             <p>
-                I turn raw footage into clean, engaging and high-energy
-                content designed to stand out.
+                Professional video editing for creators and businesses.
             </p>
 
-            <div class="hero-buttons">
-                <a href="projects.html" class="btn primary">
-                    View My Work
-                </a>
-
-                <a href="contact.html" class="btn secondary">
-                    Contact Me
-                </a>
-            </div>
-
+            <a href="#projects" class="button">
+                VIEW PROJECTS
+            </a>
         </div>
-
     </section>
 
-    <!-- WORK -->
-    <section class="section">
+    <section class="projects" id="projects">
 
-        <div class="section-header">
-            <small>What I Do</small>
-            <h2>My Work</h2>
-            <p>Editing made for every type of content.</p>
+        <div class="title">
+            <h2>Projects</h2>
+            <p>Choose the editing style that fits your project.</p>
         </div>
 
         <div class="cards">
 
             <div class="card">
                 <div class="icon">🎮</div>
-                <h3>Gaming Edits</h3>
-                <p>
-                    Fast-paced gaming edits, montages and entertaining
-                    gameplay videos.
-                </p>
-                <a href="categories.html">Explore →</a>
+                <h3>Gaming Editing</h3>
+                <p>Fast-paced gaming edits, effects and transitions.</p>
+
+                <div class="card-bottom">
+                    <span class="price">From €XX</span>
+                    <a href="projects.html" class="view">VIEW →</a>
+                </div>
             </div>
 
             <div class="card">
-                <div class="icon">📱</div>
-                <h3>Short Form</h3>
-                <p>
-                    TikTok, YouTube Shorts and Reels designed to grab
-                    attention immediately.
-                </p>
-                <a href="categories.html">Explore →</a>
+                <div class="icon">📹</div>
+                <h3>IRL Editing</h3>
+                <p>Clean and entertaining edits for real-life content.</p>
+
+                <div class="card-bottom">
+                    <span class="price">From €XX</span>
+                    <a href="projects.html" class="view">VIEW →</a>
+                </div>
             </div>
 
             <div class="card">
                 <div class="icon">🎬</div>
-                <h3>YouTube Videos</h3>
-                <p>
-                    Long-form YouTube editing with clean cuts, effects,
-                    subtitles and sound design.
-                </p>
-                <a href="categories.html">Explore →</a>
+                <h3>4K Editing</h3>
+                <p>High-quality 4K video editing with professional visuals.</p>
+
+                <div class="card-bottom">
+                    <span class="price">From €XX</span>
+                    <a href="projects.html" class="view">VIEW →</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Reel Editing</h3>
+                <p>Short-form edits for Reels, TikTok and social media.</p>
+
+                <div class="card-bottom">
+                    <span class="price">From €XX</span>
+                    <a href="projects.html" class="view">VIEW →</a>
+                </div>
+            </div>
+
+            <div class="card long">
+                <div class="icon">📺</div>
+                <h3>Long Form Video</h3>
+                <p>Professional editing for YouTube, podcasts and long-form content.</p>
+
+                <div class="card-bottom">
+                    <span class="price">From €XX</span>
+                    <a href="projects.html" class="view">VIEW →</a>
+                </div>
             </div>
 
         </div>
-
     </section>
 
-    <!-- ABOUT PREVIEW -->
-    <section class="section about">
+    <section class="contact" id="contact">
+        <h2>Have a project?</h2>
+        <p>Let's create something together.</p>
 
-        <div class="about-content">
-
-            <small>ABOUT ANTH STUDIOS</small>
-
-            <h2>Built for creators.</h2>
-
-            <p>
-                Anth Studios focuses on creating modern, clean and
-                engaging video edits for creators, gamers and online
-                personalities.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="about.html" class="btn secondary">
-                    More About Me
-                </a>
-            </div>
-
-        </div>
-
+        <a href="mailto:your@email.com" class="button">
+            CONTACT ME
+        </a>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <div>
-            © 2026 Anth Studios
-        </div>
-
-        <div>
-            Video Editing by <span>Anth</span>
-        </div>
+        © 2026 Anth Studios
     </footer>
 
 </body>
