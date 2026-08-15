@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anth Studios | Video Editing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            border-bottom: 1px solid #1c1c1c;
+            background: rgba(5, 5, 5, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #a855f7;
+        }
+
+        .contact-btn {
+            border: 1px solid #333;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: white !important;
+        }
+
+        .contact-btn:hover {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.08);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: #7e22ce;
+            opacity: 0.08;
+            filter: blur(180px);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 850px;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: #a855f7;
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: #a855f7;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #a855f7;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #9333ea;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 1px solid #333;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #a855f7;
+            transform: translateY(-2px);
+        }
+
+        /* WORK */
+        .section {
+            padding: 100px 8%;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header small {
+            color: #a855f7;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            margin-top: 12px;
+        }
+
+        .section-header p {
+            color: #777;
+            margin-top: 15px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #202020;
+            background: #090909;
+            padding: 30px;
+            min-height: 260px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #a855f7;
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #151515;
+            border-radius: 8px;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: #888;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 25px;
+            color: #a855f7;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+        .about {
+            border-top: 1px solid #171717;
+            border-bottom: 1px solid #171717;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #888;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 35px 8%;
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #a855f7;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            Anth<span>Studios</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Anth Studios
+            </div>
+
+            <h1>
+                VIDEO<br>
+                <span>EDITING.</span>
+            </h1>
+
+            <p>
+                I turn raw footage into clean, engaging and high-energy
+                content designed to stand out.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn primary">
+                    View My Work
+                </a>
+
+                <a href="contact.html" class="btn secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WORK -->
+    <section class="section">
+
+        <div class="section-header">
+            <small>What I Do</small>
+            <h2>My Work</h2>
+            <p>Editing made for every type of content.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>Gaming Edits</h3>
+                <p>
+                    Fast-paced gaming edits, montages and entertaining
+                    gameplay videos.
+                </p>
+                <a href="categories.html">Explore →</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Short Form</h3>
+                <p>
+                    TikTok, YouTube Shorts and Reels designed to grab
+                    attention immediately.
+                </p>
+                <a href="categories.html">Explore →</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎬</div>
+                <h3>YouTube Videos</h3>
+                <p>
+                    Long-form YouTube editing with clean cuts, effects,
+                    subtitles and sound design.
+                </p>
+                <a href="categories.html">Explore →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="section about">
+
+        <div class="about-content">
+
+            <small>ABOUT ANTH STUDIOS</small>
+
+            <h2>Built for creators.</h2>
+
+            <p>
+                Anth Studios focuses on creating modern, clean and
+                engaging video edits for creators, gamers and online
+                personalities.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="about.html" class="btn secondary">
+                    More About Me
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>
+            © 2026 Anth Studios
+        </div>
+
+        <div>
+            Video Editing by <span>Anth</span>
+        </div>
+    </footer>
+
+</body>
+</html>
